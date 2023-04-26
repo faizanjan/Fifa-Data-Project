@@ -1,6 +1,5 @@
 
 function matchesPerCity (WorldCupMatches){
-    console.log(WorldCupMatches)
     const cityFreq = {};
     WorldCupMatches.map(match => {
         let city = match.City;
