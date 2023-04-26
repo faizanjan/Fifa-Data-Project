@@ -20,17 +20,11 @@ csvToJson()
             if(matchIds2014.includes(match.MatchID)){
                 let event = match.Event;
                 if(event.includes('R')){
-                    let si= event.indexOf('R');
-                    if(event.charAt(si+1)==='S') si+=2;
-                    let ei = event.substring(si).indexOf("'");
-                    let numOfR = event.substring(si+1, ei+si);
-    
-    
                     let freqKeys = Object.keys(redCardsPerTeam);
                     if(freqKeys.includes(match['Team Initials'])) {
-                        redCardsPerTeam[match['Team Initials']]+= parseInt(numOfR);
+                        redCardsPerTeam[match['Team Initials']]++;
                     }
-                    else redCardsPerTeam[match['Team Initials']]=parseInt(numOfR);
+                    else redCardsPerTeam[match['Team Initials']]=1;
                 }
             }
         })
