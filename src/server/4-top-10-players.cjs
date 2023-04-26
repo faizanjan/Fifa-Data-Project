@@ -8,16 +8,14 @@ csvToJson()
         data.map(match => {
             let event = match.Event;
             if (event.includes('G')) {
-                let si = event.indexOf('G');
-                let ei = event.substring(si).indexOf("'");
-                let goals = event.substring(si + 1, ei + si);
-
-
-                let freqKeys = Object.keys(top10);
-                if (freqKeys.includes(match['Player Name'])) {
-                    top10[match['Player Name']] += parseInt(goals);
+                let index = event.indexOf('G');
+                if(event.charAt(index-1)!=='O'){
+                    let freqKeys = Object.keys(top10);
+                    if (freqKeys.includes(match['Player Name'])) {
+                        top10[match['Player Name']] ++;
+                    }
+                    else top10[match['Player Name']] = 1;
                 }
-                else top10[match['Player Name']] = parseInt(goals);
             }
         })
         let top10Arr = Object.entries(top10);
