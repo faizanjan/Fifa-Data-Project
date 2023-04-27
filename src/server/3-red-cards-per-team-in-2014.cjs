@@ -1,10 +1,14 @@
 
-function redCardsPerTeamInAYear(WorldCupMatches,WorldCupPlayers, year){
-    const matchIdsForAYear = [];
+function getMatchsForYear (WorldCupMatches,year){
+    const idList = [];
     WorldCupMatches.map(match=>{
-        if(parseInt(match.Year)===year) matchIdsForAYear.push(match.MatchID)
+        if(parseInt(match.Year)===year) idList.push(match.MatchID)
     })
-    
+    return idList;
+}
+
+function redCardsPerTeamInAYear(WorldCupMatches,WorldCupPlayers, year){
+    const matchIdsForAYear = getMatchsForYear(WorldCupMatches, year);
     const redCardsPerTeam ={};
     WorldCupPlayers.map(match=>{
         if(matchIdsForAYear.includes(match.MatchID)){
