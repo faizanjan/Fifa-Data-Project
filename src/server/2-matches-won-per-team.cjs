@@ -8,7 +8,7 @@ function matchesWonPerTeam (WorldCupMatches){
 
         let freqKeys = Object.keys(acc);
         if(freqKeys.includes(winner)) acc[winner]++;
-        else if (winner!=='') acc[winner]=1;
+        else if (winner!=='' && winner!==undefined) acc[winner]=1;
         return acc;
     },{})
     return winnerFreq;
