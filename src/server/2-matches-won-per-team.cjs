@@ -6,8 +6,7 @@ function matchesWonPerTeam (WorldCupMatches){
         }
         else if(match['Home Team Goals']<match['Away Team Goals'])winner = match['Away Team Name']
 
-        let freqKeys = Object.keys(acc);
-        if(freqKeys.includes(winner)) acc[winner]++;
+        if(acc[winner]) acc[winner]++;
         else if (winner!=='' && winner!==undefined) acc[winner]=1;
         return acc;
     },{})

@@ -6,8 +6,7 @@ function top10Players(WorldCupPlayers) {
             for (let index = event.indexOf('G'); index < event.length; index++) {
                 if (index === 0 || (event.charAt(index) === 'G' && event.charAt(index - 1) !== 'O')) goals++;
             }
-            let freqKeys = Object.keys(acc);
-            if (freqKeys.includes(match['Player Name'])) {
+            if (acc[match['Player Name']]) {
                 acc[match['Player Name']] += goals;
             }
             else acc[match['Player Name']] = goals;

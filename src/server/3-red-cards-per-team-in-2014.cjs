@@ -17,8 +17,7 @@ function redCardsPerTeamInAYear(WorldCupMatches,WorldCupPlayers, year){
         if(matchIdsForAYear.includes(match.MatchID)){
             let event = match.Event;
             if(event.includes('R')){
-                let freqKeys = Object.keys(acc);
-                if(freqKeys.includes(match['Team Initials'])) {
+                if(acc[match['Team Initials']]) {
                     acc[match['Team Initials']]++;
                 }
                 else acc[match['Team Initials']]=1;
