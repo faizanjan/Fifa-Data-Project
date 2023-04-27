@@ -12,15 +12,6 @@ function top10Players(WorldCupPlayers) {
                     top10[match['Player Name']]+=goals;
                 }
                 else top10[match['Player Name']] = goals;
-
-            // let index = event.indexOf('G');
-            // if (event.charAt(index - 1) !== 'O') {
-                // let freqKeys = Object.keys(top10);
-                // if (freqKeys.includes(match['Player Name'])) {
-                //     top10[match['Player Name']]++;
-                // }
-                // else top10[match['Player Name']] = 1;
-            // }
         }
     })
     let top10Arr = Object.entries(top10);
