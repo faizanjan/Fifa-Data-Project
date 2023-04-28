@@ -99,7 +99,7 @@ test("Returns an Object of Cities with the number of matches played there", () =
   };
 
   expect(matchesPerCity(input)).toEqual(expectedOutput);
-  expect(matchesPerCity(input)).not.toBeUndefined();
+  expect(matchesPerCity(input)).not.toBeNull();
   expect(matchesPerCity(input)).toBeDefined();
 })
 
@@ -196,7 +196,7 @@ test("Returns empty object if no valid city is provided in input", () => {
   ]
   expect(matchesPerCity(input)).toEqual({});
   expect(matchesPerCity(input)).toBeDefined();
-  expect(matchesPerCity(input)).not.toBeUndefined();
+  expect(matchesPerCity(input)).not.toBeNull();
 })
 
 test("Throws Error if input is not an Array", ()=>{
