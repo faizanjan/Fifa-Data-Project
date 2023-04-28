@@ -8,8 +8,7 @@ function matchesWonPerTeam (WorldCupMatches){
             winner = match['Home Team Name']
         }
         else if(match['Home Team Goals']<match['Away Team Goals'])winner = match['Away Team Name']
-
-        if(typeof(winner==='string')){
+        if(typeof(winner)==='string'){
             if(acc[winner]) acc[winner]++;
             else if (winner!=='') acc[winner]=1;
         }
