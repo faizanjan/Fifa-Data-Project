@@ -1,5 +1,5 @@
 function mapObject(obj, callback) {
-    if (!checkArg(obj)) return [];
+    if (!checkArg(obj)) return {};
     let newObject = {};
     for (let key in obj){
         newObject[key]=callback(obj[key],key);
