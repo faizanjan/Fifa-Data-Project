@@ -1,5 +1,8 @@
 
 function getMatchsForYear (WorldCupMatches,year){
+    if(!Array.isArray(WorldCupMatches) || typeof(year)!=='number') {
+        throw new Error("Invalid Input Types");
+    }
     const idList = WorldCupMatches.reduce((acc,match)=>{
         if(parseInt(match.Year)===year) acc[match.MatchID]=true;
         return acc;
@@ -9,6 +12,10 @@ function getMatchsForYear (WorldCupMatches,year){
 
 function redCardsPerTeamInAYear(WorldCupMatches,WorldCupPlayers, year){
 
+    if(!Array.isArray(WorldCupMatches) || !Array.isArray(WorldCupPlayers) || typeof(year)!=='number') {
+        throw new Error("Invalid Input Types");
+    }
+
     // Get matchIDs for the specified year
     const matchIdsForAYear = getMatchsForYear(WorldCupMatches, year);
 
@@ -16,6 +23,7 @@ function redCardsPerTeamInAYear(WorldCupMatches,WorldCupPlayers, year){
     const redCardsPerTeam = WorldCupPlayers.reduce((acc,match)=>{
         if(matchIdsForAYear[match.MatchID]){
             let event = match.Event;
+            if(event===undefined) return acc;
             if(event.includes('R')){
                 if(acc[match['Team Initials']]) {
                     acc[match['Team Initials']]++;
@@ -28,4 +36,4 @@ function redCardsPerTeamInAYear(WorldCupMatches,WorldCupPlayers, year){
     
     return redCardsPerTeam;
 }
-module.exports = redCardsPerTeamInAYear;
+module.exports = {redCardsPerTeamInAYear, getMatchsForYear};
