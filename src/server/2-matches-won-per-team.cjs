@@ -4,10 +4,14 @@ function matchesWonPerTeam (WorldCupMatches){
     }
     const winnerFreq = WorldCupMatches.reduce ((acc, match)=>{
         let winner;
-        if(match['Home Team Goals']>match['Away Team Goals']) {
+        let homeGoals=match['Home Team Goals'], awayGoals=match['Away Team Goals'];
+        if(parseInt(homeGoals)!=homeGoals || parseInt(awayGoals)!=awayGoals){
+            throw new Error("Number of goals are not valid");
+        }
+        if(homeGoals>awayGoals) {
             winner = match['Home Team Name']
         }
-        else if(match['Home Team Goals']<match['Away Team Goals'])winner = match['Away Team Name']
+        else if(homeGoals<awayGoals)winner = match['Away Team Name']
         if(typeof(winner)==='string'){
             if(acc[winner]) acc[winner]++;
             else if (winner!=='') acc[winner]=1;
