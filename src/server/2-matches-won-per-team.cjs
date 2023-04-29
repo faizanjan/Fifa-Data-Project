@@ -15,7 +15,7 @@ function matchesWonPerTeam (WorldCupMatches){
         else if(homeGoals<awayGoals)winner = match['Away Team Name']
         if(typeof(winner)==='string'){
             if(acc[winner]) acc[winner]++;
-            else acc[winner]=1;
+            else if (winner!=='') acc[winner]=1;
         }
         return acc;
     },{})
