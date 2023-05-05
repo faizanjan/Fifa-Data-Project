@@ -1,0 +1,606 @@
+[
+    {
+        "City": "Alicante ",
+        "count": "3"
+    },
+    {
+        "City": "Antibes ",
+        "count": "1"
+    },
+    {
+        "City": "Arica ",
+        "count": "7"
+    },
+    {
+        "City": "Barcelona ",
+        "count": "8"
+    },
+    {
+        "City": "Bari ",
+        "count": "5"
+    },
+    {
+        "City": "Basel ",
+        "count": "6"
+    },
+    {
+        "City": "Belo Horizonte ",
+        "count": "11"
+    },
+    {
+        "City": "Berlin ",
+        "count": "6"
+    },
+    {
+        "City": "Berlin West ",
+        "count": "3"
+    },
+    {
+        "City": "Berne ",
+        "count": "5"
+    },
+    {
+        "City": "Bilbao ",
+        "count": "3"
+    },
+    {
+        "City": "Birmingham ",
+        "count": "3"
+    },
+    {
+        "City": "Bologna ",
+        "count": "6"
+    },
+    {
+        "City": "Boras ",
+        "count": "2"
+    },
+    {
+        "City": "Bordeaux ",
+        "count": "9"
+    },
+    {
+        "City": "Boston ",
+        "count": "6"
+    },
+    {
+        "City": "Brasilia ",
+        "count": "10"
+    },
+    {
+        "City": "Buenos Aires ",
+        "count": "12"
+    },
+    {
+        "City": "Busan ",
+        "count": "3"
+    },
+    {
+        "City": "Cagliari ",
+        "count": "3"
+    },
+    {
+        "City": "Cape Town ",
+        "count": "8"
+    },
+    {
+        "City": "Chicago ",
+        "count": "5"
+    },
+    {
+        "City": "Cologne ",
+        "count": "5"
+    },
+    {
+        "City": "Colombes ",
+        "count": "3"
+    },
+    {
+        "City": "Cordoba ",
+        "count": "8"
+    },
+    {
+        "City": "Cuiaba ",
+        "count": "4"
+    },
+    {
+        "City": "Curitiba ",
+        "count": "6"
+    },
+    {
+        "City": "Daegu ",
+        "count": "4"
+    },
+    {
+        "City": "Daejeon ",
+        "count": "3"
+    },
+    {
+        "City": "Dallas ",
+        "count": "6"
+    },
+    {
+        "City": "Detroit ",
+        "count": "4"
+    },
+    {
+        "City": "Dortmund ",
+        "count": "10"
+    },
+    {
+        "City": "Durban ",
+        "count": "7"
+    },
+    {
+        "City": "D�Sseldorf ",
+        "count": "5"
+    },
+    {
+        "City": "Elche ",
+        "count": "3"
+    },
+    {
+        "City": "Eskilstuna ",
+        "count": "1"
+    },
+    {
+        "City": "Florence ",
+        "count": "7"
+    },
+    {
+        "City": "Fortaleza ",
+        "count": "8"
+    },
+    {
+        "City": "Frankfurt/Main ",
+        "count": "10"
+    },
+    {
+        "City": "Gelsenkirchen ",
+        "count": "10"
+    },
+    {
+        "City": "Geneva ",
+        "count": "4"
+    },
+    {
+        "City": "Genoa ",
+        "count": "5"
+    },
+    {
+        "City": "Gijon ",
+        "count": "3"
+    },
+    {
+        "City": "Gothenburg ",
+        "count": "7"
+    },
+    {
+        "City": "Guadalajara ",
+        "count": "17"
+    },
+    {
+        "City": "Gwangju ",
+        "count": "3"
+    },
+    {
+        "City": "Halmstad ",
+        "count": "2"
+    },
+    {
+        "City": "Hamburg ",
+        "count": "8"
+    },
+    {
+        "City": "Hanover ",
+        "count": "9"
+    },
+    {
+        "City": "Helsingborg ",
+        "count": "2"
+    },
+    {
+        "City": "Ibaraki ",
+        "count": "3"
+    },
+    {
+        "City": "Incheon ",
+        "count": "3"
+    },
+    {
+        "City": "Irapuato ",
+        "count": "3"
+    },
+    {
+        "City": "Jeju ",
+        "count": "3"
+    },
+    {
+        "City": "Jeonju ",
+        "count": "3"
+    },
+    {
+        "City": "Johannesburg ",
+        "count": "15"
+    },
+    {
+        "City": "Kaiserslautern ",
+        "count": "5"
+    },
+    {
+        "City": "Kobe ",
+        "count": "3"
+    },
+    {
+        "City": "La Coru�A ",
+        "count": "3"
+    },
+    {
+        "City": "Lausanne ",
+        "count": "5"
+    },
+    {
+        "City": "Le Havre ",
+        "count": "1"
+    },
+    {
+        "City": "Leipzig ",
+        "count": "5"
+    },
+    {
+        "City": "Lens ",
+        "count": "6"
+    },
+    {
+        "City": "Leon ",
+        "count": "11"
+    },
+    {
+        "City": "Lille ",
+        "count": "1"
+    },
+    {
+        "City": "Liverpool ",
+        "count": "5"
+    },
+    {
+        "City": "London ",
+        "count": "10"
+    },
+    {
+        "City": "Los Angeles ",
+        "count": "8"
+    },
+    {
+        "City": "Lugano ",
+        "count": "1"
+    },
+    {
+        "City": "Lyon ",
+        "count": "6"
+    },
+    {
+        "City": "Madrid ",
+        "count": "7"
+    },
+    {
+        "City": "Malaga ",
+        "count": "3"
+    },
+    {
+        "City": "Malm� ",
+        "count": "4"
+    },
+    {
+        "City": "Manaus ",
+        "count": "4"
+    },
+    {
+        "City": "Manchester ",
+        "count": "3"
+    },
+    {
+        "City": "Mangaung/Bloemfontein ",
+        "count": "6"
+    },
+    {
+        "City": "Mar Del Plata ",
+        "count": "6"
+    },
+    {
+        "City": "Marseilles ",
+        "count": "9"
+    },
+    {
+        "City": "Mendoza ",
+        "count": "6"
+    },
+    {
+        "City": "Mexico City ",
+        "count": "23"
+    },
+    {
+        "City": "Middlesbrough ",
+        "count": "3"
+    },
+    {
+        "City": "Milan ",
+        "count": "9"
+    },
+    {
+        "City": "Monterrey ",
+        "count": "8"
+    },
+    {
+        "City": "Montevideo ",
+        "count": "18"
+    },
+    {
+        "City": "Montpellier ",
+        "count": "6"
+    },
+    {
+        "City": "Munich ",
+        "count": "11"
+    },
+    {
+        "City": "Nantes ",
+        "count": "6"
+    },
+    {
+        "City": "Naples ",
+        "count": "7"
+    },
+    {
+        "City": "Natal ",
+        "count": "4"
+    },
+    {
+        "City": "Nelson Mandela Bay/Port Elizabeth ",
+        "count": "8"
+    },
+    {
+        "City": "Nelspruit ",
+        "count": "4"
+    },
+    {
+        "City": "New York/New Jersey ",
+        "count": "7"
+    },
+    {
+        "City": "Nezahualcoyotl ",
+        "count": "3"
+    },
+    {
+        "City": "Niigata ",
+        "count": "3"
+    },
+    {
+        "City": "Norrk�Ping ",
+        "count": "3"
+    },
+    {
+        "City": "Nuremberg ",
+        "count": "5"
+    },
+    {
+        "City": "Oita ",
+        "count": "3"
+    },
+    {
+        "City": "Orebro ",
+        "count": "1"
+    },
+    {
+        "City": "Orlando ",
+        "count": "5"
+    },
+    {
+        "City": "Osaka ",
+        "count": "3"
+    },
+    {
+        "City": "Oviedo ",
+        "count": "3"
+    },
+    {
+        "City": "Palermo ",
+        "count": "3"
+    },
+    {
+        "City": "Paris ",
+        "count": "9"
+    },
+    {
+        "City": "Phokeng ",
+        "count": "6"
+    },
+    {
+        "City": "Polokwane ",
+        "count": "4"
+    },
+    {
+        "City": "Porto Alegre ",
+        "count": "8"
+    },
+    {
+        "City": "Puebla ",
+        "count": "8"
+    },
+    {
+        "City": "Queretaro ",
+        "count": "4"
+    },
+    {
+        "City": "Rancagua ",
+        "count": "7"
+    },
+    {
+        "City": "Recife ",
+        "count": "7"
+    },
+    {
+        "City": "Reims ",
+        "count": "1"
+    },
+    {
+        "City": "Rifu ",
+        "count": "3"
+    },
+    {
+        "City": "Rio De Janeiro ",
+        "count": "18"
+    },
+    {
+        "City": "Rome ",
+        "count": "9"
+    },
+    {
+        "City": "Rosario ",
+        "count": "6"
+    },
+    {
+        "City": "Saint-Denis ",
+        "count": "9"
+    },
+    {
+        "City": "Saint-Etienne ",
+        "count": "6"
+    },
+    {
+        "City": "Saitama ",
+        "count": "4"
+    },
+    {
+        "City": "Salvador ",
+        "count": "8"
+    },
+    {
+        "City": "Sandviken ",
+        "count": "2"
+    },
+    {
+        "City": "San Francisco ",
+        "count": "6"
+    },
+    {
+        "City": "Santiago De Chile ",
+        "count": "10"
+    },
+    {
+        "City": "Sao Paulo ",
+        "count": "14"
+    },
+    {
+        "City": "Sapporo ",
+        "count": "3"
+    },
+    {
+        "City": "Seoul ",
+        "count": "3"
+    },
+    {
+        "City": "Seville ",
+        "count": "4"
+    },
+    {
+        "City": "Sheffield ",
+        "count": "4"
+    },
+    {
+        "City": "Shizuoka ",
+        "count": "3"
+    },
+    {
+        "City": "Solna ",
+        "count": "8"
+    },
+    {
+        "City": "Strasbourg ",
+        "count": "1"
+    },
+    {
+        "City": "Stuttgart ",
+        "count": "10"
+    },
+    {
+        "City": "Sunderland ",
+        "count": "4"
+    },
+    {
+        "City": "Suwon ",
+        "count": "4"
+    },
+    {
+        "City": "Toluca ",
+        "count": "7"
+    },
+    {
+        "City": "Toulouse ",
+        "count": "8"
+    },
+    {
+        "City": "Trieste ",
+        "count": "1"
+    },
+    {
+        "City": "Tshwane/Pretoria ",
+        "count": "6"
+    },
+    {
+        "City": "Turin ",
+        "count": "7"
+    },
+    {
+        "City": "Udevalla ",
+        "count": "1"
+    },
+    {
+        "City": "Udine ",
+        "count": "3"
+    },
+    {
+        "City": "Ulsan ",
+        "count": "3"
+    },
+    {
+        "City": "Valencia ",
+        "count": "3"
+    },
+    {
+        "City": "Valladolid ",
+        "count": "3"
+    },
+    {
+        "City": "Vasteras ",
+        "count": "2"
+    },
+    {
+        "City": "Verona ",
+        "count": "4"
+    },
+    {
+        "City": "Vigo ",
+        "count": "3"
+    },
+    {
+        "City": "Vina Del Mar ",
+        "count": "8"
+    },
+    {
+        "City": "Washington Dc ",
+        "count": "5"
+    },
+    {
+        "City": "Yokohama ",
+        "count": "4"
+    },
+    {
+        "City": "Zaragoza ",
+        "count": "3"
+    },
+    {
+        "City": "Zurich ",
+        "count": "5"
+    }
+]
