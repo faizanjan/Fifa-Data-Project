@@ -6,7 +6,6 @@ const client = new Client(clientInfo);
 
 client.connect();
 
-// SELECT withoutcards."Player Name" AS "Player Name", COUNT(withoutcards."Matches Played") AS "Matches" 
 let events = client.query(`
 SELECT *
     FROM 
@@ -26,11 +25,6 @@ SELECT *
              withoutcards."Player Name" ASC
     LIMIT 10;
         `)
-        // WHERE withcards."Matches Played" = withcards."Matches Played"
-        // GROUP BY withoutcards."Player Name"
-        // ORDER BY withoutcards."Matches Played" DESC,
-        //          withoutcards."Player Name" ASC
-        // LIMIT 10
 events
     .then((res) => {
         return fs.writeFile(path.join(__dirname, '../public/output/5-most-matches-without-cards.json'), JSON.stringify(res.rows));
