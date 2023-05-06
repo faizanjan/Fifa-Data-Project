@@ -17,12 +17,10 @@ let events = client.query(`
 
 events
     .then((res) => {
-
         // EXTRACT ALL THE INDIVIDUAL EVENTS AND THEIR MINUTES IN AN ARRAY
         let events = (res.rows);
         let eventArr = events.map(el => el["Event"].split(' '))
         let combinedEvents = eventArr.flat();
-
         // USE THAT ARRAY TO MAKE AN ARRAY OF OBJECTS WHERE MINUTES MAP TO EVENTS
         let result = combinedEvents.map(el => {
             let min = el.match(/\d+/)[0];
@@ -34,7 +32,6 @@ events
         return Promise.resolve(result);
     })
     .then((result) => {
-
         //CREATE A TABLE NAMED EVENTS WHERE YOUR RESULT WILL GO
         let schema = `"Minute" INTEGER, "Event Type" VARCHAR (3)`
         client.query(`
@@ -42,40 +39,40 @@ events
         `)
             .then(() => {
                 console.log("Table Create");
-                return insertData(result, client);
+                const values = result.map(obj => `('${obj.Minute}', '${obj['Event Type']}')`);
+                values.join(',');
+                console.log(values);
+                return client.query(`
+                    INSERT INTO "Events" ("Minute", "Event Type")
+                    VALUES ${values};
+                `);
             })
-            .then((msg) => {
-                console.log(msg);
-                return client.query(`SELECT * FROM "Events"`)
+            .then(() => {
+                console.log("msg");
+                return client.query(`SELECT "Minute", COUNT("Event Type")
+                                    FROM "Events"
+                                    WHERE "Event Type" LIKE 'G' 
+                                    GROUP BY "Minute"
+                                    ORDER BY "Minute";
+                                    `)
+            })
+            .then((res)=>{
+                console.log("Ending The Connection");
+                let output= res.rows.reduce((acc, item)=> {
+                    acc[item.Minute] = Number(item['count']);
+                    return acc;
+            }, {});
+                return fs.writeFile(path.join(__dirname, '../public/output/4-goals-in-each-min.json'), JSON.stringify(output));
             })
             .catch((err) => {
                 console.error("My Error", err)
             })
             .finally(() => {
-                console.log("Ending The Connection");
-                client.end();
+                client.query(`
+                    DROP TABLE "Events"
+                `)
+                .then(()=>{
+                    client.end();
+                })
             })
-
     })
-
-// Function to insert data into the table
-function insertData(array, client) {
-    return new Promise((resolve, reject) => {
-        const myPromises = [];
-        // Iterate over the array and generate the INSERT statements
-        array.forEach(obj => {
-            const minute = parseInt(obj.Minute);
-            const eventType = obj['Event Type'];
-
-            const insertSql = `INSERT INTO "Events" ("Minute", "Event Type") VALUES (${minute}, '${eventType}')`;
-
-            // Execute the INSERT statement
-            myPromises.push(client.query(insertSql)); 
-        });
-        Promise.all(myPromises)
-            .then(()=>{
-                resolve("Data Inserted Succesfully")
-            })
-            .catch(err=>{reject(err)})
-    })
-}
