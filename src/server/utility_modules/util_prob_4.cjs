@@ -32,13 +32,13 @@ function insertIntoTable(table, data, client) {
               `);
 }
 
-function writeOutput(data, path) {
+function writeOutput(data, myPath) {
   let output = data.reduce((acc, item) => {
     acc[item.Minute] = Number(item["count"]);
     return acc;
   }, {});
   return fs.writeFile(
-    path.join(__dirname, path),
+    path.join(__dirname, myPath),
     JSON.stringify(output)
   );
 }

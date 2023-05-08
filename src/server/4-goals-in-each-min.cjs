@@ -2,7 +2,7 @@ const { Client } = require("pg");
 const clientInfo = require("../clientInfo");
 const client = new Client(clientInfo);
 
-const {getEventsAtMinutes, createTable, insertIntoTable, writeOutput} = require('./util_prob_4.cjs');
+const {getEventsAtMinutes, createTable, insertIntoTable, writeOutput} = require('./utility_modules/util_prob_4.cjs');
 
 client.connect();
 
@@ -49,7 +49,7 @@ events
       })
       .then((res) => { 
         // FORMAT THE RESULT IN REQUIRED FORMAT AND WRITE TO A JSON FILE
-        let path = "../public/output/4-goals-in-each-min.json" 
+        let path = "../../public/output/4-goals-in-each-min.json" 
         return writeOutput(res.rows, path);
       })
       .catch((err) => {

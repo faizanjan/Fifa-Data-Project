@@ -1,4 +1,4 @@
-let sqlTrigger = require('./util.cjs');
+let sqlTrigger = require('./utility_modules/util.cjs');
 
 let query = (`
 SELECT
@@ -23,6 +23,6 @@ ORDER BY
   "Referee" ASC
 `);
 
-let outputPath = "../public/output/3-worldCups-per-ref.json";
+let outputPath = "../../public/output/3-worldCups-per-ref.json";
 
 sqlTrigger(query,outputPath);

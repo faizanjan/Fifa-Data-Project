@@ -1,4 +1,4 @@
-let sqlTrigger = require('./util.cjs');
+let sqlTrigger = require('./utility_modules/util.cjs');
 
 let query = (`
 SELECT
@@ -26,6 +26,6 @@ ORDER BY
   Wins DESC;
 `);
 
-let outputPath = "../public/output/2-matches-won-per-team.json";
+let outputPath = "../../public/output/2-matches-won-per-team.json";
 
 sqlTrigger(query,outputPath);

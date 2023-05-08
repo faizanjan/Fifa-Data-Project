@@ -1,4 +1,4 @@
-let sqlTrigger = require('./util.cjs');
+let sqlTrigger = require('./utility_modules/util.cjs');
 
 let query = (`
 SELECT
@@ -34,6 +34,6 @@ LIMIT
   10;
 `);
 
-let outputPath = "../public/output/5-most-matches-without-cards.json";
+let outputPath = "../../public/output/5-most-matches-without-cards.json";
 
 sqlTrigger(query,outputPath);
