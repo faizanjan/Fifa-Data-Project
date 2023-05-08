@@ -1,12 +1,6 @@
-const { Client } = require("pg");
-const fs = require("fs").promises;
-const clientInfo = require("../clientInfo");
-const path = require("path");
-const client = new Client(clientInfo);
+let sqlTrigger = require('./util.cjs');
 
-client.connect();
-
-let events = client.query(`
+let query = (`
 SELECT
   *
 FROM
@@ -39,17 +33,7 @@ ORDER BY
 LIMIT
   10;
 `);
-events
-  .then((res) => {
-    return fs.writeFile(
-      path.join(
-        __dirname,
-        "../public/output/5-most-matches-without-cards.json"
-      ),
-      JSON.stringify(res.rows)
-    );
-  })
-  .catch((err) => console.error(err))
-  .finally(() => {
-    client.end();
-  });
+
+let outputPath = "../public/output/5-most-matches-without-cards.json";
+
+sqlTrigger(query,outputPath);

@@ -1,12 +1,6 @@
-const { Client } = require("pg");
-const fs = require("fs").promises;
-const clientInfo = require("../clientInfo");
-const path = require("path");
-const client = new Client(clientInfo);
+let sqlTrigger = require('./util.cjs');
 
-client.connect();
-
-let result = client.query(`
+let query= (`
 SELECT
   "Team Name",
   SUM("Goals") AS "Goals"
@@ -43,15 +37,6 @@ LIMIT
   8;
 `);
 
-result
-  .then((res) => {
-    // console.log(res.rows);
-    return fs.writeFile(
-      path.join(__dirname, "../public/output/6-top-8-in-germany.json"),
-      JSON.stringify(res.rows)
-    );
-  })
-  .catch((err) => console.error(err))
-  .finally(() => {
-    client.end();
-  });
+let outputPath = "../public/output/6-top-8-in-germany.json";
+
+sqlTrigger(query,outputPath);
