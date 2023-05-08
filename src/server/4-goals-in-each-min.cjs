@@ -1,9 +1,8 @@
 const { Client } = require("pg");
-const fs = require("fs").promises;
 const clientInfo = require("../clientInfo");
-const path = require("path");
-const { Console } = require("console");
 const client = new Client(clientInfo);
+
+const {getEventsAtMinutes, createTable, insertIntoTable, writeOutput} = require('./util_prob_4.cjs');
 
 client.connect();
 
@@ -19,45 +18,21 @@ let events = client.query(`
 
 events
   .then((res) => {
-    // EXTRACT ALL THE INDIVIDUAL EVENTS AND THEIR MINUTES IN AN ARRAY
-    let events = res.rows;
-    let eventArr = events.map((el) => el["Event"].split(" "));
-    let combinedEvents = eventArr.flat();
-    // USE THAT ARRAY TO MAKE AN ARRAY OF OBJECTS WHERE MINUTES MAP TO EVENTS
-    let result = combinedEvents.map((el) => {
-      let min = el.match(/\d+/)[0];
-      return {
-        Minute: min,
-        "Event Type": el.substring(0, el.indexOf(min)),
-      };
-    });
+    let result = getEventsAtMinutes(res.rows);
     return Promise.resolve(result);
   })
   .then((result) => {
     //CREATE A TABLE NAMED EVENTS WHERE YOUR RESULT WILL GO
     let schema = `"Minute" INTEGER, "Event Type" VARCHAR (3)`;
-    client
-      .query(
-        `
-            CREATE TABLE IF NOT EXISTS "Events" (${schema});
-        `
-      )
+    let tableName = `"Events"`
+    createTable(schema, tableName, client)
       .then(() => {
-        console.log("Table Create");
-        const values = result.map(
-          (obj) => `('${obj.Minute}', '${obj["Event Type"]}')`
-        );
-        values.join(",");
-        console.log(values);
-        return client.query(`
-                    INSERT INTO 
-                      "Events" ("Minute", "Event Type")
-                    VALUES ${values};
-                `);
+        //INSERT DATA IN RESULT INTO THE NEW TABLE
+        return insertIntoTable(tableName, result, client)
       })
-      .then(() => {
-        console.log("msg");
-        return client.query(`
+      .then(() => { 
+        // RUN QUERY ON NEW TABLE TO GET RESULT
+        let query = `
         SELECT 
             "Minute", 
             COUNT("Event Type") 
@@ -69,30 +44,20 @@ events
             "Minute" 
         ORDER BY 
             "Minute";
-      
-        `);
+        `;
+        return client.query(query);
       })
-      .then((res) => {
-        console.log("Ending The Connection");
-        let output = res.rows.reduce((acc, item) => {
-          acc[item.Minute] = Number(item["count"]);
-          return acc;
-        }, {});
-        return fs.writeFile(
-          path.join(__dirname, "../public/output/4-goals-in-each-min.json"),
-          JSON.stringify(output)
-        );
+      .then((res) => { 
+        // FORMAT THE RESULT IN REQUIRED FORMAT AND WRITE TO A JSON FILE
+        let path = "../public/output/4-goals-in-each-min.json" 
+        return writeOutput(res.rows, path);
       })
       .catch((err) => {
         console.error("My Error", err);
       })
       .finally(() => {
         client
-          .query(
-            `
-            DROP TABLE "Events"
-            `
-          )
+          .query(`DROP TABLE "Events"`)
           .then(() => {
             client.end();
           });
