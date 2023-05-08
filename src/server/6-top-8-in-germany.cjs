@@ -1,4 +1,4 @@
-let sqlTrigger = require('./utility_modules/util.cjs');
+let runSQLQueryAndStoreResult = require('./utility_modules/util.cjs');
 
 let query= (`
 SELECT
@@ -39,4 +39,4 @@ LIMIT
 
 let outputPath = "../../public/output/6-top-8-in-germany.json";
 
-sqlTrigger(query,outputPath);
+runSQLQueryAndStoreResult(query,outputPath);

@@ -4,7 +4,7 @@ const { Client } = require("pg");
 const clientInfo = require("../../clientInfo");
 const client = new Client(clientInfo);
 
-module.exports = function sqlTrigger (query, outputPath){
+module.exports = function runSQLQueryAndStoreResult (query, outputPath){
   client.connect();
   client
     .query(query)

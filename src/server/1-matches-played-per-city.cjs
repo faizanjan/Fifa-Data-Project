@@ -1,4 +1,4 @@
-let sqlTrigger = require('./utility_modules/util.cjs');
+let runSQLQueryAndStoreResult = require('./utility_modules/util.cjs');
 
 let query = (`
 SELECT 
@@ -16,4 +16,4 @@ ORDER BY
 
 let outputPath = "../../public/output/1-matches-played-per-city.json";
 
-sqlTrigger(query,outputPath);
+runSQLQueryAndStoreResult(query,outputPath);
